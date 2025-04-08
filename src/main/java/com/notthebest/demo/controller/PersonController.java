@@ -38,7 +38,7 @@ public class PersonController {
 	}
 	
 	@PostMapping("deletepeople")
-	public String deletePeopleToRepo(Integer id, Model model) {
+	public String deletePeopleToRepo(@RequestParam Integer id, Model model) {
 		if(id != null)
 			service.deletePerson(id);
 		model.addAttribute("people", service.getPeople());
